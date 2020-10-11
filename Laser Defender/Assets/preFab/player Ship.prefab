@@ -102,6 +102,8 @@ MonoBehaviour:
   laser: {fileID: 7720211454575903348, guid: 1ffdbc2ec136844a7964e9ec7d2c769a, type: 3}
   LaserSpeed: 10
   ShootPauseTime: 3
+  ShootSound: {fileID: 8300000, guid: a3e01ea2ea83943c4ab6dd3e555ee7e1, type: 3}
+  DeathSound: {fileID: 8300000, guid: e2f72581a853c4ca6a519556091114f4, type: 3}
 --- !u!60 &3299672297946802342
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject laser;
     [SerializeField] float LaserSpeed = 10f;
     [SerializeField] float ShootPauseTime = 0.1f;
+    [SerializeField] AudioClip ShootSound;
+    [SerializeField] AudioClip DeathSound;
 
     //State variables
     float minX, minY, maxX, maxY;
@@ -61,6 +63,7 @@ public class Player : MonoBehaviour
         {
             GameObject Laser = Instantiate(laser, transform.position, Quaternion.identity) as GameObject;
             Laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, LaserSpeed);
+            AudioSource.PlayClipAtPoint(ShootSound, transform.position);
             yield return new WaitForSeconds(ShootPauseTime);
         }
         
@@ -92,6 +95,7 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(DeathSound, transform.position);
         }
     }
 }
